@@ -1,0 +1,9 @@
+# Task: Ask Copilot to add lanes for beta deployment and screenshots.
+default_platform(:ios)
+
+platform :ios do
+  desc "Build and upload to TestFlight"
+  lane :beta do
+    # Use Copilot to complete this lane.
+  end
+end

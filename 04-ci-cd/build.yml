@@ -1,0 +1,13 @@
+# Task: Ask Copilot to fix YAML syntax errors or complete missing steps.
+name: iOS Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Ask Copilot to complete build steps.
