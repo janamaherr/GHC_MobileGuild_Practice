@@ -1,18 +1,23 @@
+/// <reference path="./react-native-shims.d.ts" />
 // Task: Refactor this legacy React Native class component into a functional component using hooks.
-import React, { Component } from 'react';
+import React, { useCallback, useState } from 'react';
 import { View, Text, Button } from 'react-native';
 
-export default class LegacyComponent extends Component {
-  state = { count: 0 };
+export const incrementCount = (count: number) => count + 1;
 
-  increment = () => this.setState({ count: this.state.count + 1 });
+const INITIAL_COUNT = 0;
 
-  render() {
-    return (
-      <View>
-        <Text>Count: {this.state.count}</Text>
-        <Button title="Increment" onPress={this.increment} />
-      </View>
-    );
-  }
+export default function LegacyComponent() {
+  const [count, setCount] = useState(INITIAL_COUNT);
+
+  const increment = useCallback(() => {
+    setCount((currentCount: number) => incrementCount(currentCount));
+  }, []);
+
+  return (
+    <View>
+      <Text>Count: {count}</Text>
+      <Button title="Increment" onPress={increment} />
+    </View>
+  );
 }

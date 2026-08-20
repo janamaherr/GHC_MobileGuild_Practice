@@ -23,3 +23,5 @@ This repo is designed for you to explore and apply GitHub Copilot in practical m
 - Experiment freely — try different prompts.
 - Don’t aim for perfection; aim for exploration.
 - Share cool results or surprises in your PR description.
+
+
